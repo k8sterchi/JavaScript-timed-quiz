@@ -68,6 +68,10 @@ h2 {
     height: 3rem;
  }
 
+ button:focus {
+    background-color: aqua;
+ }
+
 /* 
 h1 {
     color: #ff000050;
