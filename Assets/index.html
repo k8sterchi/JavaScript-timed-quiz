@@ -8,13 +8,40 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
 </head>
 <body>
-    <div class ="container">
+
+    <div class="quiz-container" id="quiz">
+        <div class="quiz-header">
+            <h2 id="question">Insert Question HERE</h2>
+            <ul>
+                <li>
+                    <input type="radio" name="answer" id="a" class="answer">
+                    <label for="a" id="a_text">ANSWER</label>
+                </li>
+                <li>
+                    <input type="radio" name="answer" id="b" class="answer">
+                    <label for="b" id="b_text">ANSWER</label>
+                </li> 
+                <li>
+                    <input type="radio" name="answer" id="c" class="answer">
+                    <label for="c" id="c_text">ANSWER</label>
+                </li>  
+                <li>
+                    <input type="radio" name="answer" id="d" class="answer">
+                    <label for="d" id="d_text">ANSWER</label>
+                </li>
+            </ul>
+        </div>
+        <button id="submit">SUBMIT</button>
+    </div>
+
+
+ <!--  <div class ="start-container">
         <div id = "home" class= "flex-column.flex-center">
             <h1>Let's Play!</h1>
             <a href="/game.html" class="btn">Play</a>
             <a href="/highscores.html" id="highscore-btn" class="btn">🧚🏼 High Scores 🏆</a>
         </div>
-    </div>
+    </div> --> 
     
 <script src="js/script.js"></script>
 

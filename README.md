@@ -30,3 +30,14 @@ THEN the game is over
 WHEN the game is over
 
 THEN I can save my initials and score>
+
+## Helpful Resources...
+since i am still learning css, these helped me style my quiz
+https://www.w3schools.com/csS/css_font_google.asp font
+https://www.w3schools.com/cssref/css_units.php css vw vh viewport
+https://www.sitepoint.com/understanding-and-using-rem-units-in-css/ rem vs em units
+
+to create the quiz input structure in html:
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio
+
+
