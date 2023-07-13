@@ -9,6 +9,7 @@ var finishScreen = document.querySelector(".quiz-finish-screen");
 var highScoresScreen = document.querySelector(".highscores-screen");
 var returnButton = document.querySelector(".highscores-screen button:nth-of-type(1)");
 var scoreDisplay = document.querySelector(".quiz-finish-screen p");
+var initialsInput = document.querySelector(".quiz-finish-screen input");
 
 // Quiz Data
 var quizData = [

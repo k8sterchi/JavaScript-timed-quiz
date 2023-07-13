@@ -28,9 +28,6 @@ button {
    background-color: chartreuse;
    background-image: linear-gradient(0deg,chartreuse, #ffa580);
    color: red;
-   /* border: none;
-   display: block; */
-   /* width: 100%; */
    cursor: pointer;
    font-size: 1rem;
    padding: .5rem;
@@ -83,7 +80,6 @@ float: right;
 /* Header/Quiz: intro section */
 
 .quiz-intro, main {
-  /* display: none; */
    margin-bottom: 30vh;
    margin-left: 10%;
    margin-right: 10%;
@@ -99,24 +95,8 @@ float: right;
    width: 50%;
    margin: 0 auto;
 }
-
-/* Main Quiz Content */
-main {
-   /* display: none; */
-}
-
-/* question screen */
-.question-screen {
-   /* display: none; */
-}
-
-/* finish screen */
-.quiz-finish-screen {
-   /* display: none; */
-}
- /* highscores screen*/
- .highscores-screen {
-   /* display: none; */
+.quiz-finish-screen input {
+   background-color: rgb(231, 34, 156); /* Replace with your desired color */
  }
 
  .highscores-screen ol {
