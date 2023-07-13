@@ -8,6 +8,7 @@ var questionScreen = document.querySelector(".question-screen");
 var finishScreen = document.querySelector(".quiz-finish-screen");
 var highScoresScreen = document.querySelector(".highscores-screen");
 var returnButton = document.querySelector(".highscores-screen button:nth-of-type(1)");
+var scoreDisplay = document.querySelector(".quiz-finish-screen p");
 
 // Quiz Data
 var quizData = [
@@ -66,21 +67,24 @@ function updateTimer() {
 function displayQuestion() {
     var currentQuestion = quizData[currentQuestionIndex];
     var questionElement = document.querySelector(".question-screen h2");
-    var answerElements = document.querySelectorAll(".question-screen li button");
+    var answerContainer = document.querySelector(".question-screen ul");
   
     questionElement.textContent = currentQuestion.question;
+    answerContainer.innerHTML = "";
   
-    for (let i = 0; i < answerElements.length; i++) {
-      answerElements[i].textContent = currentQuestion.answers[i];
-      answerElements[i].addEventListener("click", () => {
-        checkAnswer(answerElements[i].textContent);
-      });
+    for (var i = 0; i < currentQuestion.answers.length; i++) {
+      var answerButton = document.createElement("button");
+      answerButton.textContent = currentQuestion.answers[i];
+      answerContainer.appendChild(document.createElement("li")).appendChild(answerButton);
     }
+  
+    answerContainer.addEventListener("click", checkAnswer);
   }
   
-  // Function to check the selected answer
+// Function to check the selected answer
 function checkAnswer(selectedAnswer) {
-    const currentQuestion = quizData[currentQuestionIndex];
+    var selectedAnswer = event.target.textContent;
+    var currentQuestion = quizData[currentQuestionIndex];
   
     if (selectedAnswer === currentQuestion.correctAnswer) {
       score++;
@@ -101,6 +105,7 @@ function checkAnswer(selectedAnswer) {
       finishQuiz();
     }
   }
+  
   
   // Function to finish the quiz
   function finishQuiz() {
