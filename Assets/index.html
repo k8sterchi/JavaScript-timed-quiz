@@ -1,49 +1,83 @@
+ 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JavaScript Quiz</title>
-    <link rel ="stylesheet" href="style/style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Audiowide"
+    />
+    <link rel="stylesheet" href="style/style.css" />
+  </head>
+  <body>
+    <!-- main outer container-->
+    <div class="outer-container">
 
-    <div class="quiz-container" id="quiz">
-        <div class="quiz-header">
-            <h2 id="question">Insert Question HERE</h2>
-            <ul>
-                <li>
-                    <input type="radio" name="answer" id="a" class="answer">
-                    <label for="a" id="a_text">ANSWER</label>
-                </li>
-                <li>
-                    <input type="radio" name="answer" id="b" class="answer">
-                    <label for="b" id="b_text">ANSWER</label>
-                </li> 
-                <li>
-                    <input type="radio" name="answer" id="c" class="answer">
-                    <label for="c" id="c_text">ANSWER</label>
-                </li>  
-                <li>
-                    <input type="radio" name="answer" id="d" class="answer">
-                    <label for="d" id="d_text">ANSWER</label>
-                </li>
-            </ul>
-        </div>
-        <button id="submit">check your answer</button>
+      <!-- top bar section -->
+      <div class="top-bar">
+        <button>🧚🏼 High Scores 🏆</button>
+        <p>Timer: 00:00</p>
+      </div>
+
+      <!-- inner div -->
+      <div class="inner-container">
+
+        <!-- intro to quiz -->
+        <header class="quiz-intro">
+          <h1>Test Your JavaScript Knowledge!</h1>
+          <p>to get started, press start! </p>
+          <button>Start!</button>
+
+        </header>
+        <!-- main quiz content -->
+        <main>
+
+        </main>
+      </div>
     </div>
 
 
- <!--  <div class ="start-container">
-        <div id = "home" class= "flex-column.flex-center">
-            <h1>Let's Play!</h1>
-            <a href="/game.html" class="btn">Play</a>
-            <a href="/highscores.html" id="highscore-btn" class="btn">🧚🏼 High Scores 🏆</a>
-        </div>
-    </div> --> 
-    
-<script src="js/script.js"></script>
 
-</body>
-</html>
+
+<!-- Start 
+    <div class="home-container">
+      <div id="home" class="flex-center flex-column">
+        <h1>Test Your Knowledge of JavaScript</h1>
+        <button id="start" class="btn">Start</button>
+        <button id="high-scores" class="btn">🧚🏼 High Scores 🏆</button>
+      </div>
+    </div>
+
+
+
+
+    <div class="quiz-container" id="quiz">
+      <div class="quiz-header">
+        <h2 id="question">Insert Question HERE</h2>
+        <ul>
+          <li>
+            <input type="radio" name="answer" id="a" class="answer" />
+            <label for="a" id="a_text">ANSWER</label>
+          </li>
+          <li>
+            <input type="radio" name="answer" id="b" class="answer" />
+            <label for="b" id="b_text">ANSWER</label>
+          </li>
+          <li>
+            <input type="radio" name="answer" id="c" class="answer" />
+            <label for="c" id="c_text">ANSWER</label>
+          </li>
+          <li>
+            <input type="radio" name="answer" id="d" class="answer" />
+            <label for="d" id="d_text">ANSWER</label>
+          </li>
+        </ul>
+      </div>
+      <button id="submit">check your answer</button>
+    </div>
+
+    <script src="js/script.js"></script>-->
+  </body>
+</html> 
