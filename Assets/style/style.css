@@ -96,7 +96,7 @@ float: right;
    margin: 0 auto;
 }
 .quiz-finish-screen input {
-   background-color: rgb(231, 34, 156); /* Replace with your desired color */
+   background-color: rgb(231, 34, 156); 
  }
 
  .highscores-screen ol {

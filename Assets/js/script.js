@@ -107,7 +107,6 @@ function checkAnswer(selectedAnswer) {
     }
   }
   
-  
   // Function to finish the quiz
   function finishQuiz() {
     clearInterval(timerInterval);
@@ -115,7 +114,41 @@ function checkAnswer(selectedAnswer) {
     finishScreen.style.display = "block";
     scoreDisplay.textContent = `Your Score: ${score}`;
   }
+
+// Function to handle the form submission and store high scores
+function submitScore(event) {
+    event.preventDefault();
+    var initials = initialsInput.value.trim();
   
+    if (initials !== "") {
+      var highScore = `${initials} - ${score}`;
+  
+      // Save the high score to localStorage
+      saveHighScore(highScore);
+  
+      initialsInput.value = "";
+      switchToHighScores();
+  
+      // Update the high scores list
+      updateHighScoresList();
+    }
+  }
+  
+  // Function to update the high scores list
+  function updateHighScoresList() {
+    // Clear the existing high scores list
+    highScoresList.innerHTML = "";
+  
+    // Retrieve high scores from localStorage
+    var highScores = getHighScores();
+  
+    // Add each high score to the list
+    highScores.forEach((score) => {
+      var highScoreItem = document.createElement("li");
+      highScoreItem.textContent = score;
+      highScoresList.appendChild(highScoreItem);
+    });
+  }
 
 // Event listener for the Start button
 startButton.addEventListener("click", startQuiz);
