@@ -32,6 +32,7 @@ WHEN the game is over
 THEN I can save my initials and score>
 
 ## Helpful Resources...
+Chat GPT answered a lot of questions.
 since i am still learning css, these helped me style my quiz
 https://www.w3schools.com/csS/css_font_google.asp font
 https://www.w3schools.com/cssref/css_units.php css vw vh viewport
