@@ -79,23 +79,35 @@ function displayQuestion() {
   }
   
   // Function to check the selected answer
-  function checkAnswer(selectedAnswer) {
-    var currentQuestion = quizData[currentQuestionIndex];
+function checkAnswer(selectedAnswer) {
+    const currentQuestion = quizData[currentQuestionIndex];
   
     if (selectedAnswer === currentQuestion.correctAnswer) {
       score++;
-      currentQuestionIndex++;
-      if (currentQuestionIndex < quizData.length) {
-        displayQuestion();
-      } else {
-        finishQuiz();
-      }
     } else {
-      timeRemaining -= 10; // Subtract 10 seconds 
+      timeRemaining -= 10; // Subtract 10 seconds for wrong answer (adjust as needed)
       if (timeRemaining <= 0) {
+        timeRemaining = 0;
         finishQuiz();
+        return;
       }
     }
+  
+    currentQuestionIndex++;
+  
+    if (currentQuestionIndex < quizData.length) {
+      displayQuestion();
+    } else {
+      finishQuiz();
+    }
+  }
+  
+  // Function to finish the quiz
+  function finishQuiz() {
+    clearInterval(timerInterval);
+    questionScreen.style.display = "none";
+    finishScreen.style.display = "block";
+    scoreDisplay.textContent = `Your Score: ${score}`;
   }
   
 
