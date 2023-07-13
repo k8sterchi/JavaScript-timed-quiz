@@ -1,26 +1,19 @@
-// 1 define and assign values to global variables
-// 2 create functions
-// 3 call functions
+// select elements using query selectors
+// attach event listeners to the buttons
+//write functions to handle the button clicks and change what is displayed
 
-// create an array of obejects, each object holds the data for each question
-// remember to separate by commas
+var startButton = document.querySelector(".quiz-intro button");
+var questionScreen = document.querySelector(".question-screen");
+var finishScreen = document.querySelector(".quiz-finish-screen");
+var highScoresScreen = document.querySelector(".highscores-screen");
+var returnButton = document.querySelector(".highscores-screen button:nth-of-type(1)");
 
-// assign the quiz id to a variable
-// assign the answer id to a variable
-// assign the question id to a variable
-// assign each x_text id to a variable
-// assign the submit button to a variable
+// Add event listener to the start button
+startButton.addEventListener("click", startQuiz);
 
-// need a start quiz feature that begins a countdown timer feature
-// need the countdown feature to stop when quiz ends 
-// need to delete time when question answered wrong
-
-// when the submit button is pressed the quiz question and answers should repopulate with new data
-// the input selector should clear from previously selected answer
-// need a function that can change the text of each question and answer elements
-// need the submit button to have an eventListener...
-
-
- 
-  
-  
+// Function to handle start quiz button click event
+function startQuiz() {
+  // Hide intro section and show question screen
+  document.querySelector(".quiz-intro").style.display = "none";
+  questionScreen.style.display = "block";
+  // Other code to handle the quiz logic

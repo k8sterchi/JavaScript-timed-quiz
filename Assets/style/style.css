@@ -77,12 +77,13 @@ float: right;
    display: flex;
    flex-direction: column;
    justify-content: start ;
+   border: 20px red;
 }
 
 /* Header/Quiz: intro section */
 
 .quiz-intro, main {
-  display: none;
+  /* display: none; */
    margin-bottom: 30vh;
    margin-left: 10%;
    margin-right: 10%;
@@ -101,21 +102,21 @@ float: right;
 
 /* Main Quiz Content */
 main {
-   display: block;
+   /* display: none; */
 }
 
 /* question screen */
 .question-screen {
-   display: none;
+   /* display: none; */
 }
 
 /* finish screen */
 .quiz-finish-screen {
-   display: none;
+   /* display: none; */
 }
  /* highscores screen*/
  .highscores-screen {
-   display: block;
+   /* display: none; */
  }
 
  .highscores-screen ol {

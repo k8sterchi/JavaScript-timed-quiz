@@ -29,48 +29,45 @@
         <header class="quiz-intro">
           <h1>Test Your JavaScript Knowledge!</h1>
           <p>to get started, press start! </p>
-          <button>Start!</button>
+          <button>Start!</button> <!-- when clicked the header section should no longer be visible, and the question-screen should become visible-->
         </header>
 
         <!-- main quiz content -->
         <main>
-          <section class="question-screen">
-            <h2>Question Here</h2>
+          <section class="question-screen" style="display: none;">
+            <h2></h2>
             <ul>
-              <!-- This will be generated in JavaScript -->
-              <li><button>Answer 1</button></li>
-              <li><button>Answer 2</button></li>
-              <li><button>Answer 3</button></li>
-              <li><button>Answer 4</button></li>
+              <!-- Multiple choice answers be generated in JavaScript -->
+              <li><button></button></li>
+              <li><button></button></li>
+              <li><button></button></li>
+              <li><button></button></li>
             </ul>
           </section>
- <!-- you finished the quiz section -->
-          <section class="quiz-finish-screen">
-            <h2>You Finished!</h2>
-            <p>Your Score: 00</p>
-            <div>
-            <label for="">Enter Initials:</label>
-            <input type="text">
-            <button>submit</button>
-          </div> 
+ <!-- after the quiz is finished a display of the user's score and an input for them to store their intitials on a high scores page-->
+          <section class="quiz-finish-screen" style="display: none;">
+            <h1>You Finished!</h1>
+            <p></p>
+            <form>
+            <label for="initials">Enter Initials:</label>
+            <input type="text" id="initials"/>
+            <button type="submit">submit</button>
+            </form> 
           </section>
 <!-- high scores screen -->
-          <section class="highscores-screen">
+          <section class="highscores-screen" style="display:none;">
 
-          <h2>High Scores</h2>
-          <ol>
-            <!-- This will be generated in JavaScript -->
-            <li>KS - 20</li>
-            <li>KS - 20</li>
-            <li>KS - 20</li>
-            <li>KS - 20</li>
-          </ol>
+          <h1>High Scores</h1>
+          <ol></ol>
           <button>Return to Start</button>
           <button>Clear High Scores</button>
           </section>
+
+          
         </main>
       </div>
     </div>
-  </body>
-  </html>
+    <script src="./Assets/js/script.js"></script>
+</body>
+</html>
 
