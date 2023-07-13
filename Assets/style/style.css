@@ -82,7 +82,7 @@ float: right;
 /* Header/Quiz: intro section */
 
 .quiz-intro, main {
-  
+  display: none;
    margin-bottom: 30vh;
    margin-left: 10%;
    margin-right: 10%;
@@ -100,6 +100,19 @@ float: right;
 }
 
 /* Main Quiz Content */
+main {
+   display: block;
+}
+
+/* question screen */
+.question-screen {
+   display: none;
+}
+
+/* finish screen */
+.quiz-finish-screen {
+   display: block;
+}
 
 
 
