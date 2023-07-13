@@ -48,6 +48,10 @@ h1, h2 {
    color: #7fffd450;
    text-align: center;
 }
+
+li {
+   list-style: none;
+}
 /* outer container */
 
 .outer-container {
@@ -77,8 +81,12 @@ float: right;
 
 /* Header/Quiz: intro section */
 
-.quiz-intro {
+.quiz-intro, main {
+  
    margin-bottom: 30vh;
+   margin-left: 10%;
+   margin-right: 10%;
+   background-color: #0000ff00;
 }
 
 .quiz-intro p {
