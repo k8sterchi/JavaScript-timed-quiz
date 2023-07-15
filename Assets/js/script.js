@@ -1,15 +1,16 @@
-// select elements using query selectors
-// attach event listeners to the buttons
-//write functions to handle the button clicks and change what is displayed
-
+// connect js with html through querySelectors
 var startButton = document.querySelector(".quiz-intro button");
-var timerDisplay = document.querySelector(".top-bar p");
 var questionScreen = document.querySelector(".question-screen");
+var answerContainer = document.querySelector(".question-screen ul");
 var finishScreen = document.querySelector(".quiz-finish-screen");
-var highScoresScreen = document.querySelector(".highscores-screen");
-var returnButton = document.querySelector(".highscores-screen button:nth-of-type(1)");
 var scoreDisplay = document.querySelector(".quiz-finish-screen p");
 var initialsInput = document.querySelector(".quiz-finish-screen input");
+var submitButton = document.querySelector(".quiz-finish-screen button");
+var highScoresScreen = document.querySelector(".highscores-screen");
+var highScoresList = document.querySelector(".highscores-screen ol");
+var returnButton = document.querySelector(".highscores-screen .return-button");
+var clearButton = document.querySelector(".highscores-screen .clear-button");
+var timerDisplay = document.querySelector(".top-bar p");
 
 // Quiz Data
 var quizData = [
@@ -35,8 +36,21 @@ var score = 0;
 var timeRemaining = 60;
 var timerInterval;
 
+
 // Add eventlistener to the start button
 startButton.addEventListener("click", startQuiz);
+submitButton.addEventListener("click", submitScore);
+returnButton.addEventListener("click", returnToStart); 
+// want to change return to sumbit initials and score and save on to that page
+  //want to add this return function to a new button called 'return to start'
+   
+  
+// Function to Return to Start
+function returnToStart() {
+  console.log('the return to start button has been pushed');
+  highScoresScreen.style.display = "none";
+  quizIntro.style.display = "block";
+}  
 
 // Function to handle start quiz button click event and to start the quiz
 function startQuiz() {
@@ -112,7 +126,7 @@ function checkAnswer(selectedAnswer) {
     clearInterval(timerInterval);
     questionScreen.style.display = "none";
     finishScreen.style.display = "block";
-    scoreDisplay.textContent = `Your Score: ${score}`;
+    scoreDisplay.textContent = `Your Score: ${score}`; // *return and look up string interpelation 
   }
 
 // Function to handle the form submission and store high scores
@@ -122,36 +136,64 @@ function submitScore(event) {
   
     if (initials !== "") {
       var highScore = `${initials} - ${score}`;
-  
-      // Save the high score to localStorage
       saveHighScore(highScore);
-  
       initialsInput.value = "";
-      switchToHighScores();
-  
-      // Update the high scores list
-      updateHighScoresList();
+      // switchToHighScores();
+      updateHighScoresList(); // Update high scores list dynamically
     }
+    console.log('submitted initials to make li', initials)
   }
   
+    // Function to save high score to localStorage
+  function saveHighScore(highScore) {
+    // Retrieve existing high scores from localStorage
+    var existingHighScores = localStorage.getItem("highScores");
+  
+    // Parse existing high scores into an array or create an empty array if no high scores are found
+    var highScores = existingHighScores ? JSON.parse(existingHighScores) : [];
+  
+    // Add the new high score to the array
+    highScores.push(highScore);
+  
+    // Store the updated high scores array in localStorage
+    localStorage.setItem("highScores", JSON.stringify(highScores));
+  }
+  
+
   // Function to update the high scores list
   function updateHighScoresList() {
-    // Clear the existing high scores list
     highScoresList.innerHTML = "";
   
-    // Retrieve high scores from localStorage
     var highScores = getHighScores();
   
-    // Add each high score to the list
-    highScores.forEach((score) => {
+    highScores.forEach((highScore) => {
       var highScoreItem = document.createElement("li");
-      highScoreItem.textContent = score;
+      highScoreItem.textContent = highScore;
       highScoresList.appendChild(highScoreItem);
     });
   }
+  
+  // Function to retrieve high scores from localStorage
+  function getHighScores() {
+    var existingHighScores = localStorage.getItem('highScores');
+    return existingHighScores ? JSON.parse(existingHighScores) : [];
+  }
+  
+  var highscoresList = document.querySelector('.highscores-list');
+  var highScores = getHighScores();
+  
+  highScores.forEach(function(score) {
+    var li = document.createElement('li');
+    li.textContent = score;
+    highscoresList.appendChild(li);
+  });
+  
+  
+  // Update high scores list on page load
+  window.addEventListener("DOMContentLoaded", updateHighScoresList);
+  
+  
 
-// Event listener for the Start button
-startButton.addEventListener("click", startQuiz);
 
 
   
