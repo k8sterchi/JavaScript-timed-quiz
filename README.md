@@ -37,7 +37,7 @@ WHEN the game is over
 
 THEN I can save my initials and score>
 
-## Helpful Resources...
+## Helpful Resources
 Chat GPT answered a lot of questions.
 
 and since i am still learning css, these helped me style my quiz
