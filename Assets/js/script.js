@@ -67,7 +67,7 @@ function showHighScores() {
 
   // Update high scores list dynamically
   updateHighScoresList();
-}git st
+}
 
 // Function to handle start quiz button click event and to start the quiz
 function startQuiz() {
